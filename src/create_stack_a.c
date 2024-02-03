@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:44:17 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 13:08:15 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:49:55 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,31 @@ void ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
     }
 }
 
-void print_list(t_stack_a *head) {
+void print_list(t_stack_a *head){
     if (head == NULL) {
         printf("List is empty.\n");
         return;
     }
-
-    // Para listas no circulares
+    
     t_stack_a *current = head;
     while (current != NULL) {
         printf("%d ", current->num);
         current = current->next;
     }
     printf("\n");
+}
+
+void first_to_back(t_stack_a *stack_a)
+{
+    t_stack_a *aux;
+
+    aux = stack_a;
+    while (aux->next != NULL) {
+        aux = aux->next;
+    }
+    stack_a->back = aux;
+    printf ("primero: %i\n", stack_a->num);
+    printf ("ultimo: %i\n", stack_a->back->num);
 }
 
 void    create_stack_a(int argc, char **argv)
@@ -82,5 +94,12 @@ void    create_stack_a(int argc, char **argv)
 		ft_lstadd_back(&stack_a, new_node);
 		i ++;
 	}
+    first_to_back(stack_a);
 	print_list(stack_a);
+    sa(stack_a);
+    print_list(stack_a);
+    rra(stack_a);
+    print_list(stack_a);
+    ra(stack_a);
+    print_list(stack_a);
 }

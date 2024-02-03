@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:09:34 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 13:09:12 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/03 16:51:55 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,12 @@ char	**ft_split(char const *s, char c);
 char *drop_cero(char *num);
 int	ft_atoi(const char *str);
 void    create_stack_a(int argc, char **argv);
+void ft_check_one_argument(char **argv);
+void check_is_number (int i, int argc, char ** argv);
+int is_number(char *number);
+char *drop_cero(char *num);
+void sa(t_stack_a *stack_a);
+void rra(t_stack_a *stack_a);
+void ra(t_stack_a *stack_a);
 
 #endif

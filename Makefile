@@ -6,7 +6,7 @@
 #    By: manufern <manufern@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 18:23:23 by manufern          #+#    #+#              #
-#    Updated: 2024/02/03 11:08:27 by manufern         ###   ########.fr        #
+#    Updated: 2024/02/03 15:36:35 by manufern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ SRCS = ./src/push_swap.c \
 	./src/ft_strlen.c \
 	./src/check_numbers.c \
 	./src/ft_atoi.c \
-	./src/create_stack_a.c
+	./src/create_stack_a.c \
+	./src/check_argument.c \
+	./src/movement_stack_a.c
 OBJS = $(SRCS:.c=.o)
 RM				= rm -f
 all:			$(NAME)

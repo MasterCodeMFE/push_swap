@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   movement_stack_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:29:41 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 16:52:42 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/05 20:22:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void sa(t_stack_a *stack_a)
 {
+    print_list(stack_a);
     t_stack_a *aux_stack;
     int aux;
-    
+    write(1, "sa\n", 3);
     aux_stack = stack_a;
     aux = aux_stack->next->num;
-    write(1, "sa\n", 3);
     aux_stack->next->num = aux_stack->num;
     aux_stack->num = aux;
 }

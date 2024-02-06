@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:44:17 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 16:49:55 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/05 18:29:57 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack_a	*create_new_node(int num)
 {
-	t_stack_a	*new_node;
+    t_stack_a	*new_node;
 
 	new_node = malloc(sizeof(t_stack_a));
 	if (new_node == NULL)
@@ -50,7 +50,8 @@ void ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
     }
 }
 
-void print_list(t_stack_a *head){
+void print_list(t_stack_a *head)
+{
     if (head == NULL) {
         printf("List is empty.\n");
         return;
@@ -86,7 +87,9 @@ void    create_stack_a(int argc, char **argv)
     if (argc > 2)
 	    i = 1;
     else
+    {
         i = 0;
+    }
 	stack_a = NULL;
 	while (argv[i])
 	{
@@ -94,12 +97,13 @@ void    create_stack_a(int argc, char **argv)
 		ft_lstadd_back(&stack_a, new_node);
 		i ++;
 	}
-    first_to_back(stack_a);
+/*     first_to_back(stack_a);
 	print_list(stack_a);
     sa(stack_a);
     print_list(stack_a);
     rra(stack_a);
     print_list(stack_a);
     ra(stack_a);
-    print_list(stack_a);
+    print_list(stack_a); */
+    ft_order(stack_a);
 }

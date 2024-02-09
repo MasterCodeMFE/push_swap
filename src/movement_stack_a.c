@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 15:29:41 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/08 20:06:03 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/09 19:42:08 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,11 @@ void ra(t_stack_a *stack_a)
 	}
 	aux->num = num_aux;
 }
-void pb(t_stack_a *stack_a, t_stack_b **stack_b)
-{
-	write(1, "pb\n", 3);
-	ft_lstadd_front(&*stack_b, create_new_node_b(stack_a->num));
-}
+
+	void pb(t_stack_a **stack_a, t_stack_b **stack_b)
+	{
+		write(1, "pb\n", 3);
+		ft_lstadd_front(&*stack_b, create_new_node_b((*stack_a)->num));
+		delete_node_a(&*stack_a);
+	}
+	

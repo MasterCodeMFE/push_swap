@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:09:34 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/08 20:05:58 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/09 19:19:33 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@
 
 typedef struct s_stack_a
 {
-	int                 num;
+	int					num;
 	struct s_stack_a	*back;
 	struct s_stack_a	*next;
 }	t_stack_a;
 
 typedef struct s_stack_b
 {
-	int                 num;
+	int					num;
 	struct s_stack_b	*back;
 	struct s_stack_b	*next;
 }	t_stack_b;
@@ -55,11 +55,18 @@ void ra(t_stack_a *stack_a);
 void ft_order(t_stack_a *stack_a);
 int ft_is_order(t_stack_a *stack_a);
 void order_two(t_stack_a *stack_a);
-void order_three(t_stack_a *stack_a);
+void order_three(t_stack_a **stack_a);
 void order_four(t_stack_a *stack_a, t_stack_b *stack_b);
 void ft_lstadd_front(t_stack_b **lst, t_stack_b *new);
 t_stack_b	*create_new_node_b(int num);
-void pb(t_stack_a *stack_a, t_stack_b **stack_b);
+void pb(t_stack_a **stack_a, t_stack_b **stack_b);
+void delete_node_a(t_stack_a **head);
+void ft_lstadd_front_a(t_stack_a **lst, t_stack_a *new);
+void pa(t_stack_a **stack_a, t_stack_b **stack_b);
+void first_to_back(t_stack_a *stack_a);
+t_stack_a	*create_new_node_a(int num);
+void delete_node_b(t_stack_b **head);
+void ft_order_three(t_stack_a **three);
 
 
 

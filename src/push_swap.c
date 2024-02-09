@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:19:57 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/08 15:50:15 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:26:16 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int ft_count_words(char **argument)
 	{
 		i ++;
 	}
-	printf("palabras: %i\n", i);
 	return (i);
 }
 

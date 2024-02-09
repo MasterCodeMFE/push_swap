@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:08:47 by manuel            #+#    #+#             */
-/*   Updated: 2024/02/08 19:16:46 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/09 18:10:49 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void ft_order(t_stack_a *stack_a)
 	if (cant_nodes == 2)
 		order_two(stack_a);
 	else if(cant_nodes == 3)
-		order_three(stack_a);
+		order_three(&stack_a);
 	else if(cant_nodes == 4)
 		order_four(stack_a, stack_b);
 	else

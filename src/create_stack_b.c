@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:57:40 by manuel            #+#    #+#             */
-/*   Updated: 2024/02/08 20:07:42 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/09 19:42:43 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ t_stack_b	*create_new_node_b(int num)
 	new_node->num = num;
 	new_node->next = NULL;
 	new_node->back = NULL;
-	printf("%i\n", new_node->num);
 	return (new_node);
 }
 
@@ -46,5 +45,4 @@ void ft_lstadd_front(t_stack_b **lst, t_stack_b *new)
 {   
     new->next = *lst;
     *lst = new;
-    printf("%i\n",(*lst)->num);
 }

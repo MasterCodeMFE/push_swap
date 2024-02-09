@@ -6,7 +6,7 @@
 /*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:44:17 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/08 19:05:11 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/09 19:10:31 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ t_stack_a	*create_new_node_a(int num)
 	new_node->next = NULL;
 	new_node->back = NULL;
 	return (new_node);
+}
+
+void ft_lstadd_front_a(t_stack_a **lst, t_stack_a *new)
+{   
+	(*lst)->back = new;
+	new->next = *lst;
+	*lst = new;
+	first_to_back(*lst);
 }
 
 void ft_lstadd_back(t_stack_a **lst, t_stack_a *new)

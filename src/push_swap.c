@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 18:19:57 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/05 17:03:49 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/08 15:50:15 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int ft_count_words(char **argument)
 {
 	int	i;
 
-	    i = 0;
+		i = 0;
 	while (argument[i])
 	{
 		i ++;

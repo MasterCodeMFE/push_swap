@@ -6,7 +6,7 @@
 #    By: manuel <manuel@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 18:23:23 by manufern          #+#    #+#              #
-#    Updated: 2024/02/05 19:56:37 by manuel           ###   ########.fr        #
+#    Updated: 2024/02/08 19:17:53 by manuel           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS = ./src/push_swap.c \
 	./src/order.c \
 	./src/is_order.c \
 	./src/order_two.c \
-	./src/order_three.c
+	./src/order_three.c \
+	./src/order_four.c \
+	./src/create_stack_b.c
 
 OBJS = $(SRCS:.c=.o)
 RM				= rm -f

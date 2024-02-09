@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:09:34 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 16:51:55 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:05:58 by manuel           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+#include <stdbool.h>
 
 typedef struct s_stack_a
 {
@@ -51,5 +52,23 @@ char *drop_cero(char *num);
 void sa(t_stack_a *stack_a);
 void rra(t_stack_a *stack_a);
 void ra(t_stack_a *stack_a);
+void ft_order(t_stack_a *stack_a);
+int ft_is_order(t_stack_a *stack_a);
+void order_two(t_stack_a *stack_a);
+void order_three(t_stack_a *stack_a);
+void order_four(t_stack_a *stack_a, t_stack_b *stack_b);
+void ft_lstadd_front(t_stack_b **lst, t_stack_b *new);
+t_stack_b	*create_new_node_b(int num);
+void pb(t_stack_a *stack_a, t_stack_b **stack_b);
 
+
+
+
+
+
+
+
+
+void print_list(t_stack_a *head);
+void print_list_b(t_stack_b *head);
 #endif

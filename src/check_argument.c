@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_argument.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 13:31:16 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/08 15:50:12 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/11 12:07:18 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ void check_is_number (int i, int argc, char ** argv)
 		number_is = is_number(argv[i]);
 		if (argv[i][0] == '\0')
 		{
-			printf("Algun argumento no es un numero\n");
+			/* printf("Algun argumento no es un numero\n"); */
 			exit(-1);
 		} 
 		if (number_is == 1)
 		{
-			printf("Algun argumento no es un numero\n");
+			/* printf("Algun argumento no es un numero\n"); */
 			exit(-1);
 		}
 		i++;
@@ -80,7 +80,7 @@ void comprobate_argument(int argc, char **argv)
 		{
 			if (are_arguments_equal(argv[i], argv[j]))
 			{
-				printf("Los argumentos %d y %d son iguales: %s\n", i, j, argv[i]);
+				/* printf("Los argumentos %d y %d son iguales: %s\n", i, j, argv[i]); */
 				exit (-1);
 			}
 			j++;
@@ -88,7 +88,7 @@ void comprobate_argument(int argc, char **argv)
 
 		i++;
 	}
-	printf("Todos los argumentos son numeros\n");
+	/* printf("Todos los argumentos son numeros\n"); */
 }
 
 void ft_check_one_argument(char **argv)
@@ -98,15 +98,15 @@ void ft_check_one_argument(char **argv)
 	
 	if (argv[1][0] == '\0')
 	{
-		printf("Algun argumento no es un numero\n");
+		/* printf("Algun argumento no es un numero\n"); */
 		exit(-1);
 	} 
-	printf("Solo un argumento\n");
+	/* printf("Solo un argumento\n"); */
 	one_argument = ft_split(argv[1], ' ');
 	count_argc = ft_counter(one_argument);
 	if (count_argc == 1)
 	{
-		printf("ya ordenado\n");
+		/* printf("ya ordenado\n"); */
 		exit (1);
 	}
 	comprobate_argument(count_argc, one_argument);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:08:47 by manuel            #+#    #+#             */
-/*   Updated: 2024/02/09 18:10:49 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/11 11:54:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ void ft_order(t_stack_a *stack_a)
 		order_three(&stack_a);
 	else if(cant_nodes == 4)
 		order_four(stack_a, stack_b);
+	else if(cant_nodes == 5)
+		order_five(stack_a, stack_b);
 	else
 		print_list(stack_a);
+	exit (0);
 }

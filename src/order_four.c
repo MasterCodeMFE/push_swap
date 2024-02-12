@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order_four.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:45:31 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/09 19:27:47 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/11 11:54:39 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ void order_four(t_stack_a *stack_a, t_stack_b *stack_b)
 	ft_order_three(&stack_a);
 	pa(&stack_a, &stack_b);
 	}	
-	write(1,"\n\n\n",3);
+	/* write(1,"\n\n\n",3);
 	print_list(stack_a);
 	write(1,"a\n\n\n",4);
 	print_list_b(stack_b);
-	write(1,"b\n\n\n",4);
-	exit (0);
+	write(1,"b\n\n\n",4); */
+
 }

@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 11:02:05 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 11:02:18 by manufern         ###   ########.fr       */
+/*   Updated: 2024/02/13 15:52:18 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	num;
-	int	sig;
+	long	i;
+	long	num;
+	long	sig;
 
 	i = 0;
 	num = 0;
@@ -33,6 +33,11 @@ int	ft_atoi(const char *str)
 	{
 		num = (num * 10) + (str[i] - '0');
 		i ++;
+	}
+	if (num * sig > 2147483647 || num * sig < -2147483648)
+	{
+		write(1, "Error\n", 6);
+		exit (-1);
 	}
 	return (num * sig);
 }

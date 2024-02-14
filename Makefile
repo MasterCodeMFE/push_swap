@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: manuel <manuel@student.42.fr>              +#+  +:+       +#+         #
+#    By: manufern <manufern@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/30 18:23:23 by manufern          #+#    #+#              #
-#    Updated: 2024/02/09 19:16:45 by manuel           ###   ########.fr        #
+#    Updated: 2024/02/13 16:54:22 by manufern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ SRCS = ./src/push_swap.c \
 	./src/order_four.c \
 	./src/create_stack_b.c \
 	./src/delete_node.c \
-	./src/movement_stack_b.c
+	./src/movement_stack_b.c \
+	./src/order_five.c \
+	./src/wallet_algorithm.c
 
 OBJS = $(SRCS:.c=.o)
 RM				= rm -f

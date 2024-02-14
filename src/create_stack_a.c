@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   create_stack_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:44:17 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/09 19:10:31 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/13 17:04:44 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,17 @@ t_stack_a	*create_new_node_a(int num)
 	new_node->num = num;
 	new_node->next = NULL;
 	new_node->back = NULL;
+	new_node->sa = 0;
+	new_node->sb = 0;
+	new_node->ss = 0;
+	new_node->pa = 0;
+	new_node->pb = 0;
+	new_node->ra = 0;
+	new_node->rb = 0;
+	new_node->rr = 0;
+	new_node->rra = 0;
+	new_node->rrb = 0;
+	new_node->rrr = 0;
 	return (new_node);
 }
 

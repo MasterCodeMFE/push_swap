@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: manuel <manuel@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 18:09:34 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/09 19:19:33 by manuel           ###   ########.fr       */
+/*   Updated: 2024/02/13 20:12:24 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,22 @@
 # include <unistd.h>
 # include <stdio.h>
 #include <stdbool.h>
+#include <limits.h>
 
 typedef struct s_stack_a
 {
 	int					num;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
 	struct s_stack_a	*back;
 	struct s_stack_a	*next;
 }	t_stack_a;
@@ -27,6 +39,17 @@ typedef struct s_stack_a
 typedef struct s_stack_b
 {
 	int					num;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
 	struct s_stack_b	*back;
 	struct s_stack_b	*next;
 }	t_stack_b;
@@ -67,6 +90,9 @@ void first_to_back(t_stack_a *stack_a);
 t_stack_a	*create_new_node_a(int num);
 void delete_node_b(t_stack_b **head);
 void ft_order_three(t_stack_a **three);
+void order_five(t_stack_a *stack_a, t_stack_b *stack_b);
+void wallet_algorithm(t_stack_a *stack_a, t_stack_b *stack_b, int cant_nodes);
+int count_nodes(t_stack_a* stack_a);
 
 
 

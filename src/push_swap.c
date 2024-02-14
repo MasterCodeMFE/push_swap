@@ -12,6 +12,11 @@
 
 #include "./../push_swap.h"
 
+void at_exit(void)
+{
+	system("leaks -q push_swap");
+}
+
 int ft_count_words(char **argument)
 {
 	int	i;
@@ -26,13 +31,14 @@ int ft_count_words(char **argument)
 
 int main(int argc, char **argv)
 {
+	/* atexit(at_exit); */
 	char **argument;
 	if (argc <= 1)
 	{
 		printf ("no hay argumentos");
 		return (-1);
 	}
-	printf ("hay argumentos\n");
+	/* printf ("hay argumentos\n"); */
 	if (argc > 2)
 	{
 		comprobate_argument(argc, argv);

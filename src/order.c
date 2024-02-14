@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   order.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 18:08:47 by manuel            #+#    #+#             */
-/*   Updated: 2024/02/11 11:54:46 by marvin           ###   ########.fr       */
+/*   Updated: 2024/02/13 19:56:48 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void ft_order(t_stack_a *stack_a)
 	else if(cant_nodes == 5)
 		order_five(stack_a, stack_b);
 	else
-		print_list(stack_a);
+		wallet_algorithm(stack_a, stack_b, (cant_nodes));
 	exit (0);
 }

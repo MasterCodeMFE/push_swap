@@ -2,7 +2,7 @@
 
 ## 🌐 Language Selector / Selector de Idioma
 
-[🇺🇸 English](#english) | [🇪🇸 Español](#español)
+[English](#english) | [Español](#español)
 
 ---
 

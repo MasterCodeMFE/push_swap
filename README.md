@@ -3,14 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Push Swap - Proyecto de la Escuela 42</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #007f5f;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f1f1f1;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Push Swap - 42 School Project</h1>
+<h1>Push Swap - Proyecto de la Escuela 42</h1>
 
 <h2>Descripción del Proyecto</h2>
 
-<p>Este proyecto, llamado "push_swap", es parte del plan de estudios de la escuela 42. La tarea principal es implementar un algoritmo eficiente que organice una pila de números en orden ascendente utilizando dos pilas y un conjunto limitado de operaciones.</p>
+<p>Push Swap es un proyecto del plan de estudios de la escuela 42. El objetivo principal es implementar un algoritmo eficiente que organice una pila de números en orden ascendente utilizando dos pilas y un conjunto limitado de operaciones.</p>
 
 <h2>Reglas y Operaciones</h2>
 

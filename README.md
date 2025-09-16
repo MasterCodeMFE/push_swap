@@ -1,43 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+<div align="center">
 
-<h1>Push Swap - 42 School Project</h1>
+# 🥇 push_swap
 
-<h2>Descripción del Proyecto</h2>
+<img src="https://img.shields.io/badge/42%20Project-push__swap-blue" alt="42 Project" />
+<img src="https://img.shields.io/badge/C-100%25-blue.svg" alt="C Language" />
+<img src="https://img.shields.io/badge/Algoritmia-Avanzada-green" alt="Algoritmia" />
 
-<p>Este proyecto, llamado "push_swap", es parte del plan de estudios de la escuela 42. La tarea principal es implementar un algoritmo eficiente que organice una pila de números en orden ascendente utilizando dos pilas y un conjunto limitado de operaciones.</p>
+<strong>Proyecto de Algoritmia y Estructuras de Datos - 42 Madrid</strong>
+</div>
 
-<h2>Reglas y Operaciones</h2>
+---
 
-<ul>
-  <li>Los números están representados por sus posiciones iniciales en la pila A.</li>
-  <li>El programa debe mostrar una serie de instrucciones que, al ejecutarse, ordenarán la pila A.</li>
-  <li>Se tienen dos pilas, A y B, y un conjunto limitado de operaciones permitidas.</li>
-</ul>
+## 📋 Descripción
 
-<h2>Operaciones Permitidas</h2>
+<b>push_swap</b> es un proyecto de la escuela 42 cuyo objetivo es ordenar una pila de números enteros utilizando un conjunto mínimo de operaciones y dos pilas (A y B). El reto consiste en diseñar e implementar algoritmos eficientes que reduzcan el número de movimientos necesarios.
 
-<table>
-  <tr>
-    <th>Operación</th>
-    <th>Descripción</th>
-  </tr>
-  <tr>
-    <td><code>sa</code></td>
-    <td>Swap A: Intercambia los dos primeros elementos de la pila A.</td>
-  </tr>
-  <tr>
-    <td><code>sb</code></td>
-    <td>Swap B: Intercambia los dos primeros elementos de la pila B.</td>
-  </tr>
-  <tr>
-    <td><code>ss</code></td>
-    <td>Swap Both: <code>sa</code> y <code>sb</code> al mismo tiempo.</td>
+---
+
+## 🧩 Reglas y Operaciones
+
+- Solo se permite el uso de dos pilas: <b>A</b> (inicial) y <b>B</b> (auxiliar).
+- El programa debe mostrar por pantalla la secuencia de instrucciones que ordenan la pila A.
+- Solo se pueden usar las siguientes operaciones:
+
+| Operación | Descripción |
+|-----------|-------------|
+| <code>sa</code> | Intercambia los dos primeros elementos de A |
+| <code>sb</code> | Intercambia los dos primeros elementos de B |
+| <code>ss</code> | <code>sa</code> y <code>sb</code> a la vez |
+| <code>pa</code> | Pasa el primer elemento de B a A |
+| <code>pb</code> | Pasa el primer elemento de A a B |
+| <code>ra</code> | Rota A hacia arriba |
+| <code>rb</code> | Rota B hacia arriba |
+| <code>rr</code> | <code>ra</code> y <code>rb</code> a la vez |
+| <code>rra</code> | Rota A hacia abajo |
+| <code>rrb</code> | Rota B hacia abajo |
+| <code>rrr</code> | <code>rra</code> y <code>rrb</code> a la vez |
+
+---
+
+## 🗂️ Estructura del Proyecto
+
+```
+push_swap/
+├── src/                # Código fuente principal
+├── copia/              # Copias y pruebas de algoritmos
+├── make_mac/           # Makefile para Mac
+├── Push-Swap-Tester/   # Herramientas de testing y visualización
+├── push_swap.h         # Header principal
+├── Makefile            # Compilación
+└── README.md           # Este archivo
+```
+
+---
+
+## 🚀 Compilación y Ejecución
+
+### 1. Compilar
+
+```bash
+make
+```
+
+### 2. Uso básico
+
+```bash
+./push_swap 3 2 1 6 5 8
+```
+
+El programa mostrará por pantalla la secuencia óptima de movimientos para ordenar la pila.
+
+---
+
+## 💡 Ejemplo de Ejecución
+
+```bash
+$ ./push_swap 2 1 3
+sa
+$ ./push_swap 3 2 1
+pb
+sa
+pa
+```
+
+---
+
+## 🧠 Algoritmos Implementados
+
+- Ordenación eficiente para 2, 3, 4 y 5 elementos (casos pequeños optimizados).
+- Algoritmo general para n elementos basado en costes y movimientos mínimos.
+- Gestión de memoria y control de errores.
+
+---
+
+## 🧪 Testing y Visualización
+
+Incluye scripts y herramientas para testear y visualizar el funcionamiento:
+
+- <b>Push-Swap-Tester</b>: Testea eficiencia, casos límite y control de errores.
+- <b>Visualizador</b>: Permite ver gráficamente los movimientos del algoritmo.
+
+### Ejemplo de test automático:
+
+```bash
+./push_swap_test.sh 100 500
+```
+
+### Visualización:
+
+```bash
+./push_swap_test.sh -v 100
+```
+
+---
+
+## 📁 Detalles Técnicos
+
+- Lenguaje: C (Norma 42)
+- Gestión dinámica de memoria
+- Estructuras de datos: listas doblemente enlazadas para las pilas
+- Modularidad y separación de lógica por archivos
+
+---
+
+## 👨‍💻 Autor
+
+- <b>Manuel Fernández</b>  
+  <img src="https://img.shields.io/badge/42%20Madrid-Student-blue" alt="42 Madrid" />
+  - Email: manufern@student.42.fr
+  - GitHub: [MasterCodeMFE](https://github.com/MasterCodeMFE)
+
+---
+
+## 📝 Licencia
+
+Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+---
+
+<div align="center">
+  <b>¡Disfruta optimizando tu algoritmo y aprendiendo estructuras de datos!</b> 🚀
+</div>
   </tr>
   <tr>
     <td><code>pa</code></td>

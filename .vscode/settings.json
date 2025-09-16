@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "push_swap.h": "c",
+        "z_copia_funcional": "c",
+        "limits": "c"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
+}

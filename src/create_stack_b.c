@@ -6,13 +6,13 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:57:40 by manuel            #+#    #+#             */
-/*   Updated: 2024/02/13 17:10:35 by manufern         ###   ########.fr       */
+/*   Updated: 2024/06/24 12:08:26 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../push_swap.h"
 
-t_stack_b	*create_new_node_b(int num)
+t_stack_b	*create_new_node_b(int num, int position)
 {
 	t_stack_b	*new_node;
 
@@ -35,25 +35,25 @@ t_stack_b	*create_new_node_b(int num)
 	new_node->rra = 0;
 	new_node->rrb = 0;
 	new_node->rrr = 0;
+	new_node->costo = 0;
+	new_node->position = position;
 	return (new_node);
 }
 
-void print_list_b(t_stack_b *head) {
-	if (head == NULL) {
-		printf("List B is empty.\n");
-		return;
-	}
-
-	t_stack_b *current = head;
-	while (current != NULL) {
-		printf("%d ", current->num);
-		current = current->next;
-	}
-	printf("\n");
-}
-
-void ft_lstadd_front(t_stack_b **lst, t_stack_b *new)
-{   
+void	ft_lstadd_front(t_stack_b **lst, t_stack_b *new)
+{
 	new->next = *lst;
+	if (*lst != NULL)
+	{
+		(*lst)->back = new;
+	}
+	else
+	{
+		new->back = NULL;
+	}
 	*lst = new;
+	if ((*lst)->back == NULL || (*lst)->next == NULL)
+	{
+		(*lst)->back = *lst;
+	}
 }

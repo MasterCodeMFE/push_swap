@@ -1,0 +1,134 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   z_copia_funcional                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/01 10:26:00 by manufern          #+#    #+#             */
+/*   Updated: 2024/06/13 19:10:14 by manufern         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "./../push_swap.h"
+
+
+int ft_sqrt(int number) {
+    int i;
+
+    if (number < 4)
+        return 1;
+    i = 2;
+    while (i * i < number)
+        i++;
+    if (i * i == number)
+        return i;
+    return i - 1;
+}
+
+int	count_rb(t_stack_b *stack_b, int index)
+{
+	int	counter;
+	
+
+	counter = 0;
+	while (stack_b && stack_b->position != index)
+	{
+		stack_b = stack_b->next;
+		counter++;
+	}
+	return (counter);
+}
+
+void put_index(t_stack_a *stack_a, int cant_nodes) {
+	t_stack_a *aux;
+	t_stack_a *next_index;
+	int index;
+	int i;
+
+	index = 0;
+	i = 0;
+	while (i < cant_nodes)
+	{
+		aux = stack_a;
+		next_index = NULL;
+		while (aux != NULL)
+		{
+			if (aux->position == INT_MAX && (next_index == NULL || aux->num < next_index->num))
+				next_index = aux;
+			aux = aux->next;
+		}
+		if (next_index != NULL)
+		{
+			next_index->position = index;
+			index++;
+			i++;
+		}
+	}
+}
+
+void k_sort_aux(t_stack_a *stack_a, t_stack_b *stack_b, int cant_nodes) {
+    int rb_counta;
+    int rrb_counta;
+
+    while (cant_nodes - 1 >= 0) {
+        rb_counta = count_rb(stack_b, cant_nodes - 1);
+        rrb_counta = (cant_nodes + 3) - rb_counta;
+        if (rb_counta <= rrb_counta) {
+            while (stack_b->position != cant_nodes - 1) {
+                rb(&stack_b);
+            }
+        } else {
+            while (stack_b->position != cant_nodes - 1) {
+                rrb(&stack_b);
+            }
+        }
+        pa(&stack_a, &stack_b);
+        cant_nodes--;
+    }
+    printf("A\n");
+    print_list(stack_a);
+    printf("B\n");
+    print_list_b(stack_b);
+    exit(0);
+}
+
+void k_sort(t_stack_a *stack_a, t_stack_b *stack_b, int cant_nodes) {
+    int i = 0;
+    int consta = ft_sqrt(cant_nodes) * 2;
+
+    while (stack_a)
+	{
+        if (stack_a->position <= i) 
+		{
+            pb(&stack_a, &stack_b);
+            rb(&stack_b);
+            i++;
+        }
+		else if (stack_a->position <= i + consta)
+		{
+            pb(&stack_a, &stack_b);
+            i++;
+        }
+		else
+		{
+            ra(stack_a);
+        }
+    }
+    k_sort_aux(stack_a, stack_b, cant_nodes);
+}
+
+void wallet_algorithm_2(t_stack_a *stack_a, t_stack_b *stack_b, int cant_nodes)
+{
+	put_index(stack_a, cant_nodes);
+
+	/* printf("A\n");
+	print_list(stack_a);
+	printf("B\n");
+	print_list_b(stack_b); */
+	k_sort(stack_a, stack_b, cant_nodes);
+	/* printf("A\n");
+	print_list(stack_a);
+	printf("B\n");
+	print_list_b(stack_b); */
+}

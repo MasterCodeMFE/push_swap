@@ -6,13 +6,13 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:44:17 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/13 17:04:44 by manufern         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:29:13 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../push_swap.h"
 
-t_stack_a	*create_new_node_a(int num)
+t_stack_a	*create_new_node_a(int num, int position)
 {
 	t_stack_a	*new_node;
 
@@ -35,20 +35,28 @@ t_stack_a	*create_new_node_a(int num)
 	new_node->rra = 0;
 	new_node->rrb = 0;
 	new_node->rrr = 0;
+	new_node->costo = 0;
+	new_node->position = position;
+	new_node->max_three = 0;
 	return (new_node);
 }
 
-void ft_lstadd_front_a(t_stack_a **lst, t_stack_a *new)
-{   
+void	ft_lstadd_front_a(t_stack_a **lst, t_stack_a *new)
+{
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
 	(*lst)->back = new;
 	new->next = *lst;
 	*lst = new;
 	first_to_back(*lst);
 }
 
-void ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
+void	ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
 {
-	t_stack_a *tmp;
+	t_stack_a	*tmp;
 
 	if (*lst == NULL)
 	{
@@ -69,51 +77,35 @@ void ft_lstadd_back(t_stack_a **lst, t_stack_a *new)
 	}
 }
 
-void print_list(t_stack_a *head)
+void	first_to_back(t_stack_a *stack_a)
 {
-	if (head == NULL) {
-		printf("List is empty.\n");
-		return;
-	}
-	
-	t_stack_a *current = head;
-	while (current != NULL) {
-		printf("%d ", current->num);
-		current = current->next;
-	}
-	printf("\n");
-}
-
-void first_to_back(t_stack_a *stack_a)
-{
-	t_stack_a *aux;
+	t_stack_a	*aux;
 
 	aux = stack_a;
-	while (aux->next != NULL) {
+	while (aux->next != NULL)
+	{
 		aux = aux->next;
 	}
 	stack_a->back = aux;
 }
 
-void    create_stack_a(int argc, char **argv)
+void	create_stack_a(char **argv)
 {
-	t_stack_a   *stack_a;
-	t_stack_a   *new_node;
+	t_stack_a	*stack_a;
+	t_stack_a	*new_node;
 	int			i;
 
-	if (argc > 2)
+	/* if (argc > 2)
 		i = 1;
-	else
-	{
+	else */
 		i = 0;
-	}
 	stack_a = NULL;
 	while (argv[i])
 	{
-		new_node = create_new_node_a(ft_atoi(argv[i]));
+		new_node = create_new_node_a(ft_atoi(argv[i]), INT_MAX);
 		ft_lstadd_back(&stack_a, new_node);
-		i ++;
+		i++;
 	}
 	first_to_back(stack_a);
-	ft_order(stack_a);
+	ft_order(&stack_a);
 }

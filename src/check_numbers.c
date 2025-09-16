@@ -6,13 +6,18 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/03 10:19:41 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/08 15:50:09 by manufern         ###   ########.fr       */
+/*   Updated: 2024/06/25 19:22:46 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./../push_swap.h"
 
-char *handle_negative_zero(char *arg)
+void	write_error(void)
+{
+	write (1, "Error\n", 6);
+}
+
+char	*handle_negative_zero(char *arg)
 {
 	if (arg[0] == '-' && arg[1] == '0')
 	{
@@ -21,7 +26,7 @@ char *handle_negative_zero(char *arg)
 	return (arg);
 }
 
-char *remove_leading_zeros(char *arg)
+char	*remove_leading_zeros(char *arg)
 {
 	while (*arg != '\0' && *arg == '0')
 	{
@@ -34,7 +39,7 @@ char *remove_leading_zeros(char *arg)
 	return (arg);
 }
 
-int compare_arguments(char *arg1, char *arg2)
+int	compare_arguments(char *arg1, char *arg2)
 {
 	while (*arg1 != '\0' && *arg2 != '\0')
 	{
@@ -52,7 +57,7 @@ int compare_arguments(char *arg1, char *arg2)
 	return (1);
 }
 
-int are_arguments_equal(char *arg1, char *arg2)
+int	are_arguments_equal(char *arg1, char *arg2)
 {
 	arg1 = handle_negative_zero(arg1);
 	arg2 = handle_negative_zero(arg2);

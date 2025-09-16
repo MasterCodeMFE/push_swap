@@ -12,16 +12,11 @@
 
 #include "./../push_swap.h"
 
-void at_exit(void)
-{
-	system("leaks -q push_swap");
-}
-
-int ft_count_words(char **argument)
+int	ft_count_words(char **argument)
 {
 	int	i;
 
-		i = 0;
+	i = 0;
 	while (argument[i])
 	{
 		i ++;
@@ -29,26 +24,44 @@ int ft_count_words(char **argument)
 	return (i);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	/* atexit(at_exit); */
-	char **argument;
+	char	**argument;
+	int i;
+	char *argu;
+	char *aux;
+
 	if (argc <= 1)
 	{
-		printf ("no hay argumentos");
-		return (-1);
+		return (0);
 	}
-	/* printf ("hay argumentos\n"); */
-	if (argc > 2)
+	i = 1;
+	argu = malloc(2);
+	argu[0] = ' ';
+	argu[1] = '\0';
+	/* printf("argc: %d\n", argc); */
+	while (i < argc)
 	{
-		comprobate_argument(argc, argv);
-		create_stack_a(argc, argv);
-	}	
-	else
-	{
-		ft_check_one_argument(argv);
-		argument = ft_split(argv[1], ' ');
-		create_stack_a(argc, argument);
+		
+		aux = ft_strjoin(argu, argv[i]);
+		free(argu);
+		argu = aux;
+		aux = ft_strjoin(argu, " ");
+		free(argu);
+		argu = aux;
+		i++;
 	}
+	i = 0;
+	/* printf("argu: %s\n", argu); */
+	
+	/* printf("argument: %s\n", argument[7]); */
+	/* printf("%d\n", ft_count_words(argument)); */
+	/* comprobate_argument(ft_count_words(argument), argument);
+	create_stack_a(ft_count_words(argument), argument); */
+
+		argument = ft_split(argu, ' ');
+		ft_check_one_argument(&argu);
+		
+		create_stack_a(argument);
 	return (0);
 }

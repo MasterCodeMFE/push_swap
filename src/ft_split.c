@@ -6,7 +6,7 @@
 /*   By: manufern <manufern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 17:56:25 by manufern          #+#    #+#             */
-/*   Updated: 2024/02/03 13:09:41 by manufern         ###   ########.fr       */
+/*   Updated: 2024/06/25 18:12:28 by manufern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,19 @@ int	ft_word_count(char const *s, char c, int i)
 	return (j);
 }
 
-char	**ft_free(char **aux, int j)
+char	**ft_free(char **aux)
 {
-	while (j > 0)
+	int	i;
+
+	i = 0;
+	while (aux[i] != NULL)
 	{
-		j --;
-		free ((void *)aux[j]);
+		i++;
+	}
+	while (i > 0)
+	{
+		i --;
+		free (aux[i]);
 	}
 	free(aux);
 	return (NULL);
@@ -74,7 +81,7 @@ char	**ft_matrix(char **aux, char const *s, char c, int i)
 		}
 		aux[j] = (char *) malloc((ft_word_count(s, c, i) + 1) * sizeof(char));
 		if (!aux[j])
-			return (ft_free(aux, j));
+			return (ft_free(aux));
 		l = ft_word_count(s, c, i);
 		while (k < l)
 			aux[j][k ++] = s[i ++];
@@ -90,6 +97,11 @@ char	**ft_split(char const *s, char c)
 	char	**aux;
 
 	words = ft_string_count(s, c);
+	if (words == 0)
+	{
+		write(1, "Error\n", 6);
+		exit(0);
+	}	
 	aux = (char **)malloc((words + 1) * sizeof(char *));
 	if (!aux)
 		return (NULL);
